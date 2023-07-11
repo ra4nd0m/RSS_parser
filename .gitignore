@@ -1,0 +1,8 @@
+.vscode
+/node_modules
+.env
+feeds.txt
+package-lock.json
+test.json
+Dockerfile
+.dockerignore

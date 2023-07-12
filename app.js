@@ -9,8 +9,11 @@ const fs = require('fs');
 const app = express();
 
 app.use(express.json());
+var sources = [];
 
-var sources = JSON.parse(fs.readFileSync('sites.json', 'utf-8'));
+try {
+    sources = JSON.parse(fs.readFileSync('sites.json', 'utf-8'))
+} catch { }
 const schedule = process.env.SCHEDULE;
 let cache_accsess_times = 0;
 let jsons_sent = 0;

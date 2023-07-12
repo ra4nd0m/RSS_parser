@@ -1,0 +1,8 @@
+.gitigonre
+.vscode
+node_modules
+.env
+feeds.txt
+test.json
+sites.json
+compose.yaml

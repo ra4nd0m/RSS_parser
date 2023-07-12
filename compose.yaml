@@ -1,0 +1,20 @@
+services:
+  app:
+    build: 
+      context: ./
+    links:
+       - database
+    environment:
+      - POST_URL=http://host.docker.internal:8000
+      - SCHEDULE=*/1 * * * *
+      - POST_URL=mongodb://database:27017
+      - DB=rss_data
+    ports:
+      - 3000:3000
+    depends_on:
+      - database
+  database:
+    image: mongo:6
+
+    ports:
+      - 27017:27017

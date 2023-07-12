@@ -4,5 +4,3 @@
 feeds.txt
 package-lock.json
 test.json
-Dockerfile
-.dockerignore

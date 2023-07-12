@@ -12,7 +12,6 @@ async function getRSS(url) {
     }
     console.log(feed.title);
     feed.items.forEach(item => {
-        console.log(item);
         item.content.replace('&amp;', '&');
         let date = new Date(item.pubDate);
         let date_now = new Date();
@@ -25,7 +24,6 @@ async function getRSS(url) {
             });
         };
     });
-    console.log(obj);
     return obj;
 };
 

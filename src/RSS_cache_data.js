@@ -13,10 +13,12 @@ async function cache_data(data,source_site) {
     const collection = client.db(db).collection(source_site);
     for (const item of data) {
         const result = await collection.find({ link: item.link }).toArray();
-        console.log(result);
         if (result.length === 0) {
+            console.log("New article: ",item.title);
             await collection.insertOne(item);
             obj.push(item);
+        }else{
+            console.log("FOUND! ",item.title);
         }
     }
     await client.close();

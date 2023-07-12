@@ -1,4 +1,4 @@
-const rss_parse = require('./src/RSS_parse');
+const rss_parser = require('./src/RSS_parse');
 const rss_send = require('./src/RSS_send');
 const rss_cache_data = require('./src/RSS_cache_data');
 const express = require('express');
@@ -55,7 +55,7 @@ console.log("Started!\nCurrent schedule: ", schedule)
 
 cron.schedule(schedule, async () => {
     for (const source of sources) {
-        const data = await rss_parse.getRSS(source.url);
+        const data = await rss_parser.getRSS(source.url);
         if (data != 'error') {
             let data_to_send = await rss_cache_data.cache_data(data, source.site);
             cache_accsess_times++;

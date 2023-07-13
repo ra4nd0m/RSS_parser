@@ -14,3 +14,8 @@
         "url":"Site Url"
     }]} recives json with new site to parse to add to list. Duplicates are filtered out. If success, returns OK!.
 4. /sites method: delete, body: the same as in POST. Allows to delete sites from list. If success, returns OK!.
+# How to run in docker 
+1. Make sure to set up env variables in docker-compose.yaml and Dockerfile
+2. Cd into directory
+3. Use docker-compose up
+4. Do not forget to add sites via endpoint

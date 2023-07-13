@@ -14,7 +14,9 @@ var sources = [];
 //try getting sites from sites.json
 try {
     sources = JSON.parse(fs.readFileSync('sites.json', 'utf-8'))
-} catch { }
+} catch {
+    console.log("Warning!\nSites.json not found!\nMake sure to add sites manually via the endpoint!");
+}
 //schedule to parse
 const schedule = process.env.SCHEDULE;
 //info variables for endpoints
